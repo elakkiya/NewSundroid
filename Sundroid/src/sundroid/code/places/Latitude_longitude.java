@@ -4,7 +4,11 @@
  * Application uses Google Places API and Google Weather API Powered by GOOGLE
  * 
  * Copyright (C) 2011 Elakkiya Pandian and Shweta Ojha
- * https://github.com/elakkiya/NewSundroid
+ *
+ * Please see the file License in this distribution for license terms. Below is the link to the file License.
+ * https://github.com/elakkiya/NewSundroid/blob/master/License
+ *
+ * Following is the link for the repository- https://github.com/elakkiya/NewSundroid
  *
  * This library is free software; you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by
