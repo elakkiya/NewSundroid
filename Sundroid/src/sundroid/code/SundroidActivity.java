@@ -50,10 +50,12 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -84,7 +86,7 @@ public class SundroidActivity extends Activity {
                                    .getText().toString();
                          String queryString = "https://www.google.com/ig/api?weather="
                                    + cityParamString;
-                         queryString.replace("#", "");
+                         queryString= queryString.replace("#", "");
                       
                          /* Parsing the xml file*/
                          SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -171,7 +173,7 @@ public class SundroidActivity extends Activity {
                          while (count < 5)
                          {
                         	 	//Checking if xml vicinity value is empty
-	                           	if  (place[while_ctr]==null || place[while_ctr].length()<2)
+	                           	while  (place[while_ctr]==null || place[while_ctr].length()<2)
 	                            	{
 	                            		while_ctr = while_ctr+1;
 	                               	}
@@ -179,7 +181,7 @@ public class SundroidActivity extends Activity {
 		                       		 if (while_ctr<i-1)
 		                       		 {
 		                       			 queryString = "https://www.google.com/ig/api?weather=" + place[while_ctr];
-		                       			
+		                       			System.out.println("In while loop - " +queryString);
 		   	                             spf = SAXParserFactory.newInstance();
 		   	                             sp = spf.newSAXParser();
 		   	
@@ -370,7 +372,11 @@ public class SundroidActivity extends Activity {
 			                       		while_ctr++;
 		                            }
 		                            
-		                             
+		                             /////////////Closing the soft keypad////////////////
+                         InputMethodManager iMethodMgr =
+                         (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        		                        iMethodMgr.hideSoftInputFromWindow(edt.getWindowToken(), 0);
+                        		                        
 		                            
                             
                     }
