@@ -1,30 +1,46 @@
-Sundroid - An open source project for the Android platform, gets top 5 tourist locations to visit on a day based on weather conditions
- Application is written in Java
- Application uses Google Places API and Google Weather API Powered by GOOGLE
+**PROJECT DESCRIPTION**
 
-* Copyright (C) 2011 Elakkiya Pandian and Shweta Ojha
+Sundroid - An open source project for the Android platform. Project is designed to search for tourist locations with the best weather conditions using Google APIs.
+Users can enter a location and radius to search for top 5 locations to visit based on current temperature of the place.
+-Application is written in Java
+-Application uses Google Places API and Google Weather API Powered by GOOGLE
+
+
+**COPYRIGHT INFORMATION**
+
+Copyright (C) 2011 Elakkiya Pandian and Shweta Ojha
+Elakkiya Pandian <elakkiya@gmail.com> and Shweta Ojha <shojha@pdx.edu>
+
+
+**LICENSE INFORMATION**
 
 Please see the file License in this distribution for license terms. Below is the link to the file License.
 https://github.com/elakkiya/NewSundroid/blob/master/License
 
-* Following is the link for the repository 
+
+**REPOSITORY LOCATION**
+
+Following is the link for the repository
 https://github.com/elakkiya/NewSundroid
-- Repository contains code and user/build instructions
 
- * This library is free software; you can redistribute it and/or modify it
- * under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation; either version 2.1 of the License, or (at
- * your option) any later version.
- 
- * This library is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
- * for more details.
- 
- * You should have received a copy of the GNU Lesser General Public License
- * along with this library; if not, write to the Free Software Foundation,
- * Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
- * Contact Elakkiya Pandian <elakkiya@gmail.com> and Shweta Ojha <shojha@pdx.edu>
- * Weather API Reference - Tutorial on Weather API anddev.org
+**BUILD/INSTALL INSTRUCTIONS**
+
+Please read instructions from the following file
+https://github.com/elakkiya/NewSundroid/blob/master/Developer_Docs.txt
+
+
+**REFERENCE/CREDITS**
+
+Weather API Reference - Tutorial on Weather API anddev.org
+http://www.anddev.org/android_weather_forecast_-_google_weather_api_-_description-t337.html
+
+
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+
  
