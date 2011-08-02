@@ -347,7 +347,7 @@ public class SundroidActivity extends Activity {
 					   	                           	newupdateWeatherInfoView(R.id.weather_2, reftemp, rainy_place[1]);
 					                   				newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2]);
 					                   				newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[3]);
-					                   				newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1]);                         		  
+					                   				newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[0]);                         		  
 				   	                           	  }
 				   	                           	  else if (count == 2)
 				   	                           	  {
