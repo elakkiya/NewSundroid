@@ -17,7 +17,7 @@ Following are the instructions to build the application:
 
 5. Open eclipse and make the folder your current workspace.
 
-6. Open Windows > Preferences > Make sure the SDK and JDK are pointing to the SDK and JDK installed on your computer.
+6. Open Windows > Preferences > Make sure the Android SDK and JDK are pointing to the SDK and JDK installed on your computer.
 
 7. Select File > Import > existing projects > select Sundroid.
 
