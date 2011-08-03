@@ -69,7 +69,7 @@ public class SundroidActivity extends Activity {
      private CheckBox chk_usecelsius = null;
     
      
-     /** Called when the activity is first created. */
+     /** Called when the activity is first created. ***/
      @Override
      public void onCreate(Bundle icicle) {
           super.onCreate(icicle);
