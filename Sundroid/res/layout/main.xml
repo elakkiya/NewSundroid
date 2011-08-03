@@ -129,11 +129,11 @@
                <TableRow >
                 <sundroid.code.views.SingleWeatherInfoView
                     android:id="@+id/weather_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    
+                    android:layout_weight="100"
                     />
                 </TableRow>
                
