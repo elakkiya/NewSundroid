@@ -47,12 +47,49 @@ public class xmlhandler_places extends DefaultHandler{
 	private boolean in_result = false;
 	private boolean in_inner =false;
 	private boolean in_inner_name=false;
+	private boolean in_lat =false;
+	private boolean in_long=false;
 	ArrayList<String> Vicinity_List= new ArrayList<String> (50);
 	ArrayList<String> placename_List= new ArrayList<String> (50);
-	
-	
+	ArrayList<Double> latlist = new ArrayList<Double> (50);
+	ArrayList<Double> longlist = new ArrayList<Double> (50);
+	double lat=0;
+	double lon=0;
 	///Getter and Setter Methods///////////
 	
+	
+	public boolean isIn_lat() {
+		return in_lat;
+	}
+
+	public void setIn_lat(boolean in_lat) {
+		this.in_lat = in_lat;
+	}
+
+	public boolean isIn_long() {
+		return in_long;
+	}
+
+	public void setIn_long(boolean in_long) {
+		this.in_long = in_long;
+	}
+
+	public ArrayList<Double> getLatlist() {
+		return latlist;
+	}
+
+	public void setLatlist(ArrayList<Double> latlist) {
+		this.latlist = latlist;
+	}
+
+	public ArrayList<Double> getLonglist() {
+		return longlist;
+	}
+
+	public void setLonglist(ArrayList<Double> longlist) {
+		this.longlist = longlist;
+	}
+
 	/**
 	 * @return the in_inner_name
 	 */
@@ -179,12 +216,15 @@ public class xmlhandler_places extends DefaultHandler{
 			}
 			else if (localName.equals("lat")) 
 			{
-				this.in_inner=false;
+				this.in_lat = true;
+				//this.places_resultset.getMy_Places_result().setGeo(geo);
+				//.getGeo().setLat(Double.parseDouble(dataAttribute));
 				
 			}
 			else if (localName.equals("lng")) 
 			{
-				this.in_inner=false;		
+				this.in_long = true;
+				//this.places_resultset.getMy_Places_result().getGeo().setLon(Double.parseDouble(dataAttribute));		
 			}
 			else if (localName.equals("reference")) 
 			{
@@ -247,8 +287,23 @@ public class xmlhandler_places extends DefaultHandler{
 				
 				this.in_inner_name = false;		
 			} 
-		
-		
+			if (this.in_result && this.in_lat) {
+				
+				//this.places_resultset.getMy_Places_result().getGeo().setLat(Double.parseDouble(textBetween));
+				lat = Double.parseDouble(textBetween);
+				this.latlist.add(Double.parseDouble(textBetween));
+				
+				this.in_lat = false;		
+			} 
+			if (this.in_result && this.in_long) {
+				lon = Double.parseDouble(textBetween);
+				this.places_resultset.getMy_Places_result().setGeo(new Geometry(lat, lon));
+				
+				this.longlist.add(Double.parseDouble(textBetween));
+				
+				this.in_long = false;		
+			} 
+
 		
 }
 }

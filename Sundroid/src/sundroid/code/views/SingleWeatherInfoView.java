@@ -61,6 +61,7 @@ public class SingleWeatherInfoView extends LinearLayout
      private ImageView myWeatherImageView = null;
      private TextView myTempTextView = null;
      private TextView TempPlace =null;
+     private TextView mydistance=null;
 
      // ===========================================================
      // Constructors
@@ -88,6 +89,14 @@ public class SingleWeatherInfoView extends LinearLayout
           this.TempPlace.setTextColor(0xFF000000);
           this.TempPlace.setTypeface(Typeface
                     .create("Tahoma", Typeface.BOLD));
+          
+          this.mydistance = new TextView(context);
+          this.mydistance.setText("");
+          this.mydistance.setTextSize(10);	
+          this.mydistance.setTextColor(0xFF000000);
+          this.mydistance.setTypeface(Typeface
+                    .create("Tahoma", Typeface.BOLD));
+          
           /* Add child views to this object. */
           this.addView(this.myWeatherImageView, new LinearLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));								
@@ -95,6 +104,9 @@ public class SingleWeatherInfoView extends LinearLayout
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
           this.addView(this.TempPlace, new LinearLayout.LayoutParams(
         		  LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+          this.addView(this.mydistance, new LinearLayout.LayoutParams(
+        		  LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+          
      }
 
      // ===========================================================
@@ -106,6 +118,7 @@ public class SingleWeatherInfoView extends LinearLayout
                     R.drawable.dunno));
           this.myTempTextView.setText("?");
           this.TempPlace.setText("");
+          this.mydistance.setText("");
      }
 
      /** Sets the Child-ImageView of this to the URL passed. */
@@ -149,5 +162,11 @@ public class SingleWeatherInfoView extends LinearLayout
      public void setPlace(String Place) {
  		this.TempPlace.setText("" +Place);
  	}
+     
+     public void setdistance(String dist) {
+  		this.mydistance.setText("" +dist);
+  	}
+     
+     
     
 }

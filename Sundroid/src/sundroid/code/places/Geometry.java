@@ -43,6 +43,11 @@ public class Geometry {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Geometry(double lat2, double lon2) {
+		this.lat = lat2;
+		this.lon = lon2;
+	}
+
 	///////////////Getters and Setters////////////////////////
 	public Double getLat() {
 		return lat;

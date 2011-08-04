@@ -110,7 +110,7 @@ public class SundroidActivity extends Activity {
                          WeatherSet ws = gwh.getWeatherSet();
                                                   
                          newupdateWeatherInfoView(R.id.weather_today, ws
-                                   .getWeatherCurrentCondition()," "+cityParamString);
+                                   .getWeatherCurrentCondition()," "+cityParamString,"");
                          
                          ///////////////// Code to get weather conditions for entered place ends /////////////////////////////////////////////////// 
                          
@@ -150,12 +150,17 @@ public class SundroidActivity extends Activity {
                          int arraysize = xhp.getVicinity_List().size();
                          String[] place = new String[25];
                          String[] place_name = new String[25];
+                         Double[] lat_pt=new Double[25];
+                         Double[] lng_pt=new Double[25];
                          int i;
                          //Getting name and vicinity tags from the xml file//
                          for(i=0;i<arraysize;i++)
                          {
                             	place[i]= xhp.getVicinity_List().get(i);
                             	place_name[i]=xhp.getPlacename_List().get(i);
+                            	lat_pt[i]=xhp.getLatlist().get(i);
+                            	lng_pt[i]=xhp.getLonglist().get(i);
+                            	System.out.println("long -" + lng_pt[i]);
                             	place[i]= place[i].replace("#","");
                             	
                          }
@@ -172,7 +177,8 @@ public class SundroidActivity extends Activity {
                          WeatherCurrentCondition reftemp;
                          //Places to visit if none of places in the given radius are sunny/clear/partly cloudy
                          String[] rainy_place = {"Indoor Mall","Watch a Movie", "Go to a Restaurant","Shopping!"};
-                            
+                         double theDistance=0;
+                         String str_dist="";
                          while (count < 5)
                          {
                         	 	//Checking if xml vicinity value is empty
@@ -185,6 +191,13 @@ public class SundroidActivity extends Activity {
 		                       		 {
 		                       			 queryString = "https://www.google.com/ig/api?weather=" + place[while_ctr];
 		                       			System.out.println("In while loop - " +queryString);
+		                       			theDistance = (Math.sin(Math.toRadians(selectedLat)) *
+   	                            	            Math.sin(Math.toRadians(lat_pt[while_ctr])) +
+   	                            	            Math.cos(Math.toRadians(selectedLat)) *
+   	                            	            Math.cos(Math.toRadians(lat_pt[while_ctr])) *
+   	                            	            Math.cos(Math.toRadians(selectedLng - lng_pt[while_ctr])));
+   	                            		str_dist = new Double((Math.toDegrees(Math.acos(theDistance))) * 69.09).intValue() + " miles";
+   	                            		System.out.println(str_dist);
 		   	                             spf = SAXParserFactory.newInstance();
 		   	                             sp = spf.newSAXParser();
 		   	
@@ -216,27 +229,27 @@ public class SundroidActivity extends Activity {
 		   	                            	  
 		   	                            		  //  Increment the count 
 		   	                            		  ++count;
-		   	                            	  
+		   	                            		
 		   	                            		  //   Disply the place on the widget 
 		   	                            		  if (count == 1)
 		   	                            		  {
-		   	                            			  newupdateWeatherInfoView(R.id.weather_1, reftemp, place_name[while_ctr]);                            		  
+		   	                            			  newupdateWeatherInfoView(R.id.weather_1, reftemp, place_name[while_ctr],str_dist);                            		  
 		   	                            		  }
 		   	                            		  else if (count == 2)
 		   	                            		  {
-		   	                            			  newupdateWeatherInfoView(R.id.weather_2, reftemp, place_name[while_ctr]);                            		  
+		   	                            			  newupdateWeatherInfoView(R.id.weather_2, reftemp, place_name[while_ctr],str_dist);                            		  
 		   	                            		  }
 			   	                            	  else if (count == 3)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_3, reftemp, place_name[while_ctr]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_3, reftemp, place_name[while_ctr],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else if (count == 4)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_4, reftemp, place_name[while_ctr]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_4, reftemp, place_name[while_ctr],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else if (count == 5)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_5, reftemp, place_name[while_ctr]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_5, reftemp, place_name[while_ctr],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else {}
 		                                     }
@@ -284,23 +297,23 @@ public class SundroidActivity extends Activity {
 			                            		  //  Display the place 
 			   	                            	  if (count == 1)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_1, reftemp, place_name[while_ctr-i]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_1, reftemp, place_name[while_ctr-i],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else if (count == 2)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_2, reftemp, place_name[while_ctr-i]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_2, reftemp, place_name[while_ctr-i],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else if (count == 3)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_3, reftemp, place_name[while_ctr-i]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_3, reftemp, place_name[while_ctr-i],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else if (count == 4)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_4, reftemp, place_name[while_ctr-i]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_4, reftemp, place_name[while_ctr-i],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else if (count == 5)
 			   	                            	  {
-			   	                            		  newupdateWeatherInfoView(R.id.weather_5, reftemp, place_name[while_ctr-i]);                            		  
+			   	                            		  newupdateWeatherInfoView(R.id.weather_5, reftemp, place_name[while_ctr-i],str_dist);                            		  
 			   	                            	  }
 			   	                            	  else {}
 		                                     }
@@ -339,33 +352,33 @@ public class SundroidActivity extends Activity {
 			   	                              		                      
 				                       			 if (count == 0)
 				   	                           	  {
-				                       				newupdateWeatherInfoView(R.id.weather_1, reftemp, rainy_place[0]);	  
-				                       				newupdateWeatherInfoView(R.id.weather_2, reftemp, rainy_place[1]);
-				                       				newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2]);
-				                       				newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[3]);
-				                       				newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1]);
+				                       				newupdateWeatherInfoView(R.id.weather_1, reftemp, rainy_place[0],"");	  
+				                       				newupdateWeatherInfoView(R.id.weather_2, reftemp, rainy_place[1],"");
+				                       				newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2],"");
+				                       				newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[3],"");
+				                       				newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1],"");
 				   	                           	  }
 				   	                           	  else if (count == 1)
 				   	                           	  {
-					   	                           	newupdateWeatherInfoView(R.id.weather_2, reftemp, rainy_place[1]);
-					                   				newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2]);
-					                   				newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[3]);
-					                   				newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[0]);                         		  
+					   	                           	newupdateWeatherInfoView(R.id.weather_2, reftemp, rainy_place[1],"");
+					                   				newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2],"");
+					                   				newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[3],"");
+					                   				newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[0],"");                         		  
 				   	                           	  }
 				   	                           	  else if (count == 2)
 				   	                           	  {
-				   	                           		  newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2]);
-				   	                           		  newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[0]);
-				   	                           		  newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1]);      	                           		  	                           		  
+				   	                           		  newupdateWeatherInfoView(R.id.weather_3, reftemp, rainy_place[2],"");
+				   	                           		  newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[0],"");
+				   	                           		  newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1],"");      	                           		  	                           		  
 				   	                           	  }
 				   	                           	  else if (count == 3)
 				   	                           	  {
-				   	                           		  newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[0]);
-					                           		  newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1]); 	                           		  
+				   	                           		  newupdateWeatherInfoView(R.id.weather_4, reftemp, rainy_place[0],"");
+					                           		  newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1],""); 	                           		  
 				   	                           	  }
 				   	                           	  else if (count == 4)
 				   	                           	  {
-				   	                           		  newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1]);	                           		  
+				   	                           		  newupdateWeatherInfoView(R.id.weather_5, reftemp, rainy_place[1],"");	                           		  
 				   	                           	  }
 				   	                           	  else {}
 				                       		      count =5;
@@ -393,12 +406,14 @@ public class SundroidActivity extends Activity {
      }
 
     private void newupdateWeatherInfoView(int aResourceID,
-             WeatherCurrentCondition aWCIS, String loc) throws MalformedURLException {
+             WeatherCurrentCondition aWCIS, String loc,String Dist) throws MalformedURLException {
        
         URL imgURL = new URL("http://www.google.com" + aWCIS.getIconURL());
         ((SingleWeatherInfoView) findViewById(aResourceID)).setRemoteImage(imgURL);
         	
         ((SingleWeatherInfoView) findViewById(aResourceID)).setPlace(loc);
+        
+        ((SingleWeatherInfoView) findViewById(aResourceID)).setdistance(Dist);
         
         if (this.chk_usecelsius.isChecked()){
              ((SingleWeatherInfoView) findViewById(aResourceID))
