@@ -11,8 +11,8 @@ Following are the instructions to build the application:
 
 4. Pull or clone the repository on Github in a folder into your local computer using the following commands:
    cd <path of the local folder>
-   git add remote origin git@github.com/elakkiya:NewSundroid
-   git pull origin master or to clone use git clone git@github.com/elakkiya:NewSundroid
+   git remote add origin git@github.com/elakkiya:NewSundroid
+   git pull origin master or to clone use git clone git@github.com:elakkiya/NewSundroid.git
    A folder called sundroid will be created in your local folder.
 
 5. Open eclipse and make the folder your current workspace.
