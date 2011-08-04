@@ -7,7 +7,11 @@ Users can enter a location and radius to search for top 5 locations to visit bas
 
 **FUTURE ENHANCEMENTS**
 
-Currently the application has two input boxes: one for the zip code/name of place and the second input box for entering the miles to search for. In future, we plan to have a third input box so that the user can enter his/her choice of places to search for. For instance national/state parks, events, hikes, historical landmarks, shopping locations, restaurants, museums etc. The application will then search for the places of interest with a pleasant weather in miles of the zip code entered. Also, on clicking the suggestion, the application will return the address and distance of the place from the place entered.
+Currently the application has two input boxes: one for the zip code/name of place and the second input box for entering the 
+miles to search for. In future, we plan to have a third input box so that the user can enter his/her choice of places to search
+ for. For instance national/state parks, events, hikes, historical landmarks, shopping locations, restaurants, museums etc. The
+ application will then search for the places of interest with a pleasant weather in miles of the zip code entered. Also, on 
+clicking the suggestion, the application will return the address and distance of the place from the place entered.
 
 **COPYRIGHT INFORMATION**
 
