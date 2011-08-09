@@ -140,7 +140,7 @@ public class SundroidActivity extends Activity {
                          ///////////////// Code to get miles from text box & convert to meters for passing into the api link ends /////////////////
                          
                          ///////////////// Code to pass lat,long and radius and get destinations from places api starts////////// /////////////////
-                         URL queryString_1 = new URL("https://maps.googleapis.com/maps/api/place/search/xml?location="+Double.toString(selectedLat) + ","+ Double.toString(selectedLng) +"&radius="+Float.toString(meters)+"&types=park|types=aquarium|types=point_of_interest|types=establishment&sensor=false&key=AIzaSyDmP0SB1SDMkAJ1ebxowsOjpAyeyiwHKQU");
+                         URL queryString_1 = new URL("https://maps.googleapis.com/maps/api/place/search/xml?location="+Double.toString(selectedLat) + ","+ Double.toString(selectedLng) +"&radius="+Float.toString(meters)+"&types=park|types=aquarium|types=point_of_interest|types=establishment|types=museum&sensor=false&key=AIzaSyDmP0SB1SDMkAJ1ebxowsOjpAyeyiwHKQU");
                          spf = SAXParserFactory.newInstance();
                          sp = spf.newSAXParser();
                          xr = sp.getXMLReader();
