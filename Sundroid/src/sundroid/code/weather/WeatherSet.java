@@ -1,7 +1,7 @@
 /*
  * Sundroid - An open source project for the Android platform, gets top 5 tourist locations to visit on a day based on weather conditions
  * Application written in Java
- * Application uses Google Places API and Google Weather API Powered by GOOGLE
+ * Application uses Google Places API, Google Geocode API and Google Weather API Powered by GOOGLE
  * 
  * Copyright (C) 2011 Elakkiya Pandian and Shweta Ojha
 *
