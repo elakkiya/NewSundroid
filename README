@@ -5,7 +5,7 @@ Sundroid - An open source project for the Android platform. Project is designed 
 Users can enter a location and radius to search. The app uses Google Places API to fetch all points of interest around the entered location and Google weather API to get weather conditions of those places. The requests for these APIs return xml files and we have written appropriate XML parsers to fetch required values. The places are sorted based on weather conditions into "Sunny", "Clear", "cloudy" ,"rainy" and certain other categories. The app finally suggests top 5 locations to visit on that particular day in the order. When none of the locations are sunny or clear the app suggests movies or restaurants.
 
 -Application is written in Java
--Application uses Google Places API and Google Weather API Powered by GOOGLE
+-Application uses Google Places API, Google Geocode API and Google Weather API Powered by GOOGLE
 
 **FUTURE ENHANCEMENTS**
 
