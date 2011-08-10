@@ -32,7 +32,7 @@
  
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:isScrollContainer="true" android:background="@drawable/weather_background" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="fill_parent">
+    android:isScrollContainer="true" android:background="@drawable/back" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="fill_parent">
     <TableLayout
      android:orientation="horizontal"
      android:layout_width="fill_parent"
@@ -42,14 +42,14 @@
     
      <TableRow android:baselineAligned="false" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:layout_gravity="clip_horizontal">
          <TextView android:text="Enter Address or Zipcode" android:gravity="center_vertical" android:textSize="15sp" android:layout_weight="60" android:textColor="#ff000000" android:layout_height="match_parent" android:layout_gravity="left" android:layout_width="0dp"></TextView>
-         <EditText android:layout_gravity="center_vertical" android:id="@+id/edit_input" android:layout_height="wrap_content" android:layout_weight="40" android:text="Hillsboro,OR" android:gravity="center_vertical" android:layout_width="0dp"></EditText>
+         <EditText android:layout_gravity="center_vertical" android:id="@+id/edit_input" android:layout_height="wrap_content" android:layout_weight="40" android:text="Portland,OR" android:gravity="center_vertical" android:layout_width="0dp"></EditText>
          
          
         </TableRow>
         
     <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_gravity="center_vertical" android:layout_weight="1">
-         <TextView android:text="Enter radius to be searched in miles" android:layout_width="0dp" android:layout_gravity="center_vertical" android:gravity="center_vertical" android:textSize="15sp" android:textColor="#ff000000" android:layout_height="match_parent" android:layout_weight="80"></TextView>
-         <EditText android:layout_width="0dp" android:id="@+id/edit_miles" android:gravity="center_vertical" android:layout_height="match_parent" android:text="400" android:layout_gravity="clip_horizontal" android:editable="true" android:numeric="decimal" android:layout_weight="20">
+         <TextView android:text="Enter radius to be searched in miles" android:layout_width="0dp" android:layout_gravity="center_vertical" android:gravity="center_vertical" android:textSize="15sp" android:textColor="#ff000000" android:layout_height="match_parent" android:layout_weight="60"></TextView>
+         <EditText android:layout_width="0dp" android:id="@+id/edit_miles" android:gravity="center_vertical" android:layout_height="match_parent" android:text="400" android:layout_gravity="clip_horizontal" android:editable="true" android:numeric="decimal" android:layout_weight="40">
              <requestFocus></requestFocus>
          </EditText>
          

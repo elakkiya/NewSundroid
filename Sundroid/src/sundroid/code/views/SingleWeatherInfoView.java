@@ -140,19 +140,19 @@ public class SingleWeatherInfoView extends LinearLayout
      }
 
      public void setTempCelcius(int aTemp) {
-          this.myTempTextView.setText("" + aTemp + " 째C");
+          this.myTempTextView.setText("" + aTemp + " 캜");
      }
 
      public void setTempFahrenheit(int aTemp) {
-          this.myTempTextView.setText("" + aTemp + " 째F");
+          this.myTempTextView.setText("" + aTemp + " 캟");
      }
 
      public void setTempFahrenheitMinMax(int aMinTemp, int aMaxTemp) {
-          this.myTempTextView.setText("" + aMinTemp + "/" + aMaxTemp + " 째F");
+          this.myTempTextView.setText("" + aMinTemp + "/" + aMaxTemp + " 캟");
      }
 
      public void setTempCelciusMinMax(int aMinTemp, int aMaxTemp) {
-          this.myTempTextView.setText("" + aMinTemp + "/" + aMaxTemp + " 째C");
+          this.myTempTextView.setText("" + aMinTemp + "/" + aMaxTemp + " 캜");
      }
 
      public void setTempString(String aTempString) {
